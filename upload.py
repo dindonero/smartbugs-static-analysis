@@ -3,7 +3,7 @@ from os import walk
 import requests
 import argparse
 
-url = "http://18.224.107.59:5000/"
+url = "http://3.138.154.66:5000/"
 
 
 def setup_parser():
