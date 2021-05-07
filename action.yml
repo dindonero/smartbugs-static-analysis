@@ -10,9 +10,4 @@ runs:
   steps:
   - name: "Run python"
     shell: bash
-    run: python3 ${{ github.action_path }}/upload.py
-  - name: "Show directory"
-    shell: bash
-    run: |
-      echo ${{ github.action_path }}
-      ls ${{ github.action_path }}
+    run: python3 ${{ github.action_path }}/upload.py --tool ${{ inputs.tool }} --token ${{ github.sha }}
