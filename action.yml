@@ -1,7 +1,7 @@
 name: 'SmartBugs Static Analysis'
 description: 'Run SmartBugs static analysis tools on Solidity Contracts in repo. Tools available: Honeybadger, Maian, Manticore, Mythril, Osiris, Oyente, Securify, Slither, SmartCheck, Solhint.'
 inputs:
-  tools:
+  tool:
     description: 'Specify tools to run the analysis separated by a semi-colon. By default all tools are run. Example: "oyente,mythril,maian".'
     required: false
     default: 'all'
