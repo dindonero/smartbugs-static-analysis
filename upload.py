@@ -5,6 +5,13 @@ import requests
 url = "http://18.224.107.59:5000/"
 
 
+def setup_parser():
+    parser = argparse.ArgumentParser(description='Upload Files to SmartBugs SASP Server.')
+    parser.add_argument('--token', type=str, required=True, help="User's GitHub Token")
+    parser.add_argument('--tool', type=str, default='all', help='Select tool(s) to perform analysis')
+    return parser.parse_args()
+
+
 def find_solidity_files_in_repo():
     solidity_files = []
     for root, dirs, files in walk('./'):
@@ -36,11 +43,13 @@ def upload_files_to_smartbugs(filenames, body):
 
 
 if __name__ == "__main__":
+    args = setup_parser()
+    
     # Searches repo for all solidity files
     filenames = find_solidity_files_in_repo()
 
     # Create Body Data
-    body = create_body(user_hash='0001testvalue', tools='oyente')
+    body = create_body(user_hash=args.token, tools=args.tool)
 
     # Upload Files to Smartbugs
     sarif_results = upload_files_to_smartbugs(filenames=filenames, body=body)
