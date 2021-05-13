@@ -4,7 +4,7 @@ inputs:
   tool:
     description: 'Specify tools to run the analysis separated by a semi-colon. By default all tools are run. Example: "oyente,mythril,maian".'
     required: false
-    default: 'all'
+    default: 'mythril,slither'
 runs:
   using: "composite"
   steps:
