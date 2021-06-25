@@ -3,7 +3,7 @@ from os import walk
 import requests
 import argparse
 
-url = "http://3.138.154.66:5000/"
+url = "https://perseus.inesc-id.pt:8000/"
 
 
 def setup_parser():
