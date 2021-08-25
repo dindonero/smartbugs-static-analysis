@@ -10,7 +10,7 @@ def setup_parser():
     parser = argparse.ArgumentParser(description='Upload Files to SmartBugs SASP Server.')
     parser.add_argument('--token', type=str, required=True, help="User's GitHub Token")
     group_tools = parser.add_mutually_exclusive_group(required='True')
-    group_tools.add_argument('-t', '-tool', nargs='+', help='Select tool(s)')
+    group_tools.add_argument('-t', '--tool', nargs='+', help='Select tool(s)')
     return parser.parse_args()
 
 
