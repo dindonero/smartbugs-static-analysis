@@ -16,4 +16,4 @@ runs:
   - name: Upload SARIF file
     uses: github/codeql-action/upload-sarif@v1
     with:
-        sarif_file: smartbugs/results/results.sarif
+        sarif_file: results.sarif
